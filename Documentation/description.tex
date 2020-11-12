@@ -1,0 +1,107 @@
+% https://github.com/natederbinsky/neu-templates/tree/master/latex/handout
+\documentclass{neu_handout}
+
+\usepackage{url}
+
+\usepackage{IEEEtrantools}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{fancyvrb}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{headings}
+
+\lstset{
+  %frame=tb,
+  language=SQL,
+  %aboveskip=3mm,
+  %belowskip=3mm,
+  showstringspaces=false, % shows string space character
+  %columns=flexible,
+  basicstyle={\small\ttfamily},
+  % numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3,
+  escapeinside=`',
+  upquote=true,
+}
+
+% Professor/Course information
+\title{Project Description}
+\author{DiMarco}
+\date{Fall 2020}
+\course{CS3200}{Database Design}
+
+\begin{document}
+
+\section{Users:}
+
+\subsection{Information Needed:}
+Users require that their full name, email address, password, and country are stored. Email is assumed to be unique, but it should not be used as a key, as it can be changed by a user if necessary
+
+\subsection{Relations:}
+Users can watch and like videos that they watch. They can also add shows or videos to a "list" that they may come back to. Users also have subscriptions to apps. These subscriptions need to store both the expiration date and the cost of the subscription.
+
+
+\section{App}
+
+\subsection{Information Needed:}
+Apps require that their name and description are stored. It is assumed that each app must have a unique name, as otherwise it would get highly confusing for users. These names are also rarely if ever going to change, as rebranding is incredibly difficult.
+
+
+\subsection{Relations:}
+Apps are available on some amount of platforms (at least one, as otherwise it could not be accessed). For this relation, the app keeps track of both its version and rating on the specific platform.
+
+\section{Platform:}
+
+\subsubsection{Information Needed:}
+The Platform simply needs to keep track of its name and whether or not it is mobile
+
+\subsection{Relations:}
+Platforms only have a relation to apps. This relation is already tracked under the app entity
+
+\section{Videos}
+
+\subsection{Information Needed:}
+Videos track the title, description, release date, and duration. None of these attributes are unique, as video titles can overlap. Duration will also be stored in milliseconds, which is likely overkill, but no video should to be long enough to make storing the duration an issue. A video should also keep track of whether or not it is free or requires a subscription to view
+
+\subsection{Relations:}
+A video has some number of tags related to it. A video should not have more than one of the same tag however. A video also is hosted by a single app. If a video is not free, then it should only be viewable by subscribers to the app it is hosted by. 
+
+\subsection{Addendums:}
+A video can have duplicates hosted by other apps, which is how a video can appear to be on multiple platforms
+
+\section{Shows}
+
+\subsection{Information Needed:}
+A show requires that it has its title and description stored. 
+
+\subsection{Relations:}
+A show is a storage medium for videos. A show has a relation to a season, there can be any number of seasons per show, but they are a unique sequence of numbers.
+
+\subsection{Addendums:}
+A show can be said to be hosted by an app, however, by introducing this requirement, we run into the issue that we will begin to have videos and shows both individually split up by the app hosting them, which introduces complexity into keeping continuity between the two. Shows also may be split amongst several apps, so keeping the app's connection to shows through the videos they host is also a valid solution.
+
+\section{Seasons}
+
+\subsection{Information Needed:}
+Seasons simply store their season number.
+
+\subsection{Relations:}
+ Seasons are related to shows in that a show can have any amount of seasons, but the season numbers per show are unique. Seasons are also related to videos, as a video can belong to a season, but that video must be only part of exactly one season of one show.
+
+
+
+\end{document}
