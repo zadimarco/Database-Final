@@ -5,7 +5,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.Scanner;
 
 
 /**
@@ -29,7 +28,7 @@ public class YaTVProperties extends Properties{
         if (props == null) {
             try {
                 props = new YaTVProperties();
-                InputStream in = YaTVProperties.class.getClassLoader().getResourceAsStream("config.properties");
+                InputStream in = YaTVProperties.class.getClassLoader().getResourceAsStream("META-INF/config.properties");
 
 
                 props.load(in);

@@ -1,6 +1,5 @@
 package queries;
 
-import javafx.scene.input.GestureEvent;
 import utilities.GeneralHelpers;
 
 import java.sql.Connection;
