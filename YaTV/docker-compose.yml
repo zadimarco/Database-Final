@@ -7,6 +7,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - datavolume:/var/lib/mysql
+
 
 
   yatv:
@@ -20,3 +23,5 @@ services:
       context: .
       dockerfile: ./Dockerfile
     restart: never
+volumes:
+  datavolume:
