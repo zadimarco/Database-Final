@@ -11,6 +11,9 @@ import java.util.Properties;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ * A class to hold helper methods
+ */
 public class GeneralHelpers {
     public static final int MAXLINE = 250;
 
@@ -19,6 +22,10 @@ public class GeneralHelpers {
     public static final String FORMAT_DATE = "[0-9]{4}-[0-1][0-9]-[0-3][0-9]";
 
 
+    /**
+     * Creates the url from the properties file for the sql server
+     * @return the url for the sql server
+     */
     public static String createConnectionUrl() {
         Properties props = YaTVProperties.getConfigs();
 
@@ -52,6 +59,10 @@ public class GeneralHelpers {
 
     }
 
+    /**
+     * Creates a salt for password hashing
+     * @return the salt
+     */
     public static byte[] getSalt(){
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[16];
@@ -89,6 +100,13 @@ public class GeneralHelpers {
         }
     }
 
+    /**
+     * Gets String input from the user that follow the specified format
+     * @param output The string to output to the user to ask for input
+     * @param formatHuman The human readable formatting
+     * @param format The regex format that the input has to match
+     * @return A matching string representing user input
+     */
     public static String getStringInput(String output, String formatHuman, String format) {
         String inp;
         do {
@@ -103,6 +121,12 @@ public class GeneralHelpers {
         return inp;
     }
 
+    /**
+     * Gets String input from the user that follow the specified format
+     * @param output The string to output to the user to ask for input
+     * @param format The regex format that the input has to match
+     * @return A matching string representing user input
+     */
     public static String getStringInput(String output, String format) {
         String inp;
         do {
@@ -117,6 +141,11 @@ public class GeneralHelpers {
         return inp;
     }
 
+    /**
+     * Gets String input from the user
+     * @param output The string to output to the user to ask for input
+     * @return A string representing user input
+     */
     public static String getStringInput(String output) {
         String inp;
         Scanner s = new Scanner(System.in);
@@ -127,6 +156,11 @@ public class GeneralHelpers {
         return inp;
     }
 
+    /**
+     * Gets Integer input from the user
+     * @param output The string to output to the user to ask for input
+     * @return An Integer representing user input
+     */
     public static int getIntInput(String output) {
 
         do {
@@ -142,6 +176,11 @@ public class GeneralHelpers {
         } while (true);
     }
 
+    /**
+     * Gets boolean input from the user
+     * @param output The string to output to the user to ask for input
+     * @return A boolean representing the user input
+     */
     public static Boolean getBoolInput(String output) {
         String inp;
         do {

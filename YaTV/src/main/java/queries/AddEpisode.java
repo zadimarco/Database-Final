@@ -10,6 +10,9 @@ import java.sql.SQLException;
 import java.util.*;
 
 
+/**
+ * Query that adds an episode to a show
+ */
 public class AddEpisode extends YaTVQuery{
 
     private static Map<String, List<Integer>> createParamList(){

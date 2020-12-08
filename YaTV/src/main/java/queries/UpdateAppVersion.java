@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Query that updates the app version on a specific platform
+ */
 public class UpdateAppVersion extends YaTVQuery {
 
     private static final String sql =

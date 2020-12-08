@@ -11,6 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Query that gets videos recommended to a user based on their subscribed apps
+ */
 public class RecommendedVideos extends YaTVQuery {
 
     private static Map<String, List<Integer>> createParamList(){

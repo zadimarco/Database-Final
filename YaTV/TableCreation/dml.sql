@@ -1,3 +1,4 @@
+
 INSERT INTO yauser
 (email, firstName, lastName, country, salt, passw)
 VALUES
@@ -27,7 +28,7 @@ VALUES
 ('Friends', 'I really would rather if we did not watch friends'),
 ('Regular Show', 'Raccoon and blue jay have a fun time working at a park');
 
-INSERT INTO Season
+INSERT INTO season
 VALUES
 (1,1),
 (1,2),
@@ -148,7 +149,7 @@ VALUES
 (4, 'Netflix', 10.0, '2022-02-04'),
 (4, 'Hulu', 20.0, '2020-07-20'),
 (6, 'Netflix', 10.0, '2020-05-08'),
-(6, 'Hulu', 20.0, '2021-24-04'),
+(6, 'Hulu', 20.0, '2021-04-24'),
 (8, 'Netflix', 10.0, '2021-04-04'),
 (8, 'Hulu', 20.0, '2021-04-04'),
 (3, 'Netflix', 10.0, '2021-04-04'),
@@ -265,3 +266,5 @@ VALUES
 (3, 9, True),
 (3, 10, True),
 (3, 11, True);
+
+

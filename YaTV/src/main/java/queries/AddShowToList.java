@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Adds a show to a user's list
+ */
 public class AddShowToList extends YaTVQuery{
 
     private static Map<String, List<Integer>> createParamList(){

@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Query that gets and ranks the revenue of apps from a country
+ */
 public class GetRankedRevenue extends YaTVQuery{
 
     private static Map<String, List<Integer>> createParamList(){

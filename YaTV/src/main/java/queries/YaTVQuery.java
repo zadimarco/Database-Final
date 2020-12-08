@@ -35,6 +35,11 @@ public abstract class YaTVQuery implements Runnable {
         }
     }
 
+    /**
+     * Loads the param field into the given statement
+     * @param stmt the statement to load the parameters into
+     * @throws SQLException
+     */
     protected void loadParams(PreparedStatement stmt) throws SQLException {
         for (String name : this.params.keySet()) {
             List<Integer> positions = paramPositions.get(name);
@@ -44,11 +49,36 @@ public abstract class YaTVQuery implements Runnable {
         }
     }
 
+    /**
+     * Handles the output of the query
+     * @param res The result set produced by the query
+     * @throws SQLException
+     */
     protected abstract void handleOutput(ResultSet res) throws SQLException;
+
+    /**
+     * Calculates any commands that need to be calculated separately after the rest have been input
+     * @param connection The connection to use to query the database
+     * @throws SQLException
+     */
     protected abstract void calcParams(Connection connection) throws SQLException;
+
+    /**
+     * Fill the params field with input from the user
+     */
     protected abstract void getInput();
+
+    /**
+     * Execute the statement in whatever way is necessary
+     * @param stmt the statement to execute
+     * @return The result set produced by the statement (will be null for an update)
+     * @throws SQLException
+     */
     protected abstract ResultSet execute(PreparedStatement stmt) throws SQLException;
 
+    /**
+     * Run this query
+     */
     public void run() {
         getInput();
 
@@ -70,6 +100,9 @@ public abstract class YaTVQuery implements Runnable {
         resetParams();
     }
 
+    /**
+     * Reset the parameters to null
+     */
     private void resetParams(){
         this.params = new HashMap<>();
     }

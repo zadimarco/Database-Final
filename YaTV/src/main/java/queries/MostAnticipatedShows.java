@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Query that gets the shows that the most users want to watch
+ */
 public class MostAnticipatedShows extends YaTVQuery {
     private static Map<String, List<Integer>> createParamList(){
         Map<String, List<Integer>> map = new HashMap<>();

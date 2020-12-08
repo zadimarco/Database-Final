@@ -1,10 +1,20 @@
 package handlers;
 
+
+/**
+ * Represents the Individual commands that a user can input
+ */
 public class Command {
     private final String name;
     private final String description;
     private Runnable query;
 
+    /**
+     * Create a user command
+     * @param name The name of the command
+     * @param description A description of what the command does
+     * @param query The query that this command represents
+     */
     public Command(String name, String description, Runnable query) {
         this.name = name;
         this.description = description;

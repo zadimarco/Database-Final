@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Query that breaks down how much money each tag makes for each app
+ */
 public class MoneyMakingTags extends YaTVQuery {
 
     private static Map<String, List<Integer>> createParamList(){

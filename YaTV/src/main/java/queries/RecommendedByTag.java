@@ -11,6 +11,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+/**
+ * Recommends the best videos from a specific tag
+ */
 public class RecommendedByTag extends YaTVQuery {
 
 

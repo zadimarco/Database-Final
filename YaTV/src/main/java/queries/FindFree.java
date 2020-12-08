@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Finds all free videos on a platform
+ */
 public class FindFree extends YaTVQuery{
 
     private static Map<String, List<Integer>> createParamList(){

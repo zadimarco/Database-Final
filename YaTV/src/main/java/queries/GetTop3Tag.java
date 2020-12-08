@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Query that gets the top 3 tags on YaTV
+ */
 public class GetTop3Tag extends YaTVQuery{
 
     private static Map<String, List<Integer>> createParamList(){

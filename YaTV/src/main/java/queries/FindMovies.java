@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Finds all long videos (over an hour) that were released within a year
+ */
 public class FindMovies extends YaTVQuery{
 
     private static Map<String, List<Integer>> createParamList(){

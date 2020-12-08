@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Query that lists the top 10 shows
+ */
 public class Top10Shows extends YaTVQuery{
 
     private static Map<String, List<Integer>> createParamList(){

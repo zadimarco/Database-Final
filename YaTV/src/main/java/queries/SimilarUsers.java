@@ -11,6 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Query that retrieves all similar users
+ */
 public class SimilarUsers extends YaTVQuery {
 
     private static Map<String, List<Integer>> createParamList(){

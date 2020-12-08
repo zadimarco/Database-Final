@@ -1,5 +1,6 @@
 CREATE DATABASE yatv;
 USE yatv;
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
 
 CREATE TABLE IF NOT EXISTS yauser
@@ -11,7 +12,8 @@ CREATE TABLE IF NOT EXISTS yauser
     country VARCHAR(50),
     salt VARCHAR(50),
     passw VARCHAR(512),
-    CONSTRAINT user_email_uk UNIQUE KEY (email)
+    CONSTRAINT user_email_uk UNIQUE KEY (email),
+    INDEX (email)
 
 );
 
@@ -55,7 +57,8 @@ CREATE TABLE IF NOT EXISTS yashow
 (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(100),
-    description VARCHAR(500)
+    description VARCHAR(500),
+    INDEX (title)
 );
 
 CREATE TABLE IF NOT EXISTS season

@@ -9,6 +9,9 @@ import java.util.Map;
 import java.util.Scanner;
 import java.sql.*;
 
+/**
+ * The Main handler for the App
+ */
 public class QueryHandler {
 
     private Scanner inp;
@@ -22,11 +25,15 @@ public class QueryHandler {
         //        createConnection();
     }
 
+    /**
+     * Ask the user for the next command
+     * @return whether or not the user wants to exit
+     */
     public boolean nextCommand(){
         for(Integer i : commands.keySet()){
             System.out.println(i + ". " + commands.get(i));
         }
-        System.out.print("Input a number corresponding to the above commands: ");
+        System.out.print("Input a number corresponding to the above commands (or exit): ");
         String input = inp.nextLine();
         int chosen;
         try {
@@ -45,35 +52,10 @@ public class QueryHandler {
         return false;
     }
 
-    public boolean createConnection(){
-        Console console = System.console();
-        int timesTried = 0;
-        while (timesTried < 3){
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                System.out.print("Input the database connection (usually localhost:3306): ");
-                String dbcon = "jdbc:mysql://" + inp.nextLine() + "/yatv";
-                System.out.print("Input the database user: ");
-                String user = inp.nextLine();
-                System.out.print("Input the database password: ");
-                String password = inp.nextLine();
-                this.con = DriverManager.getConnection(dbcon,user,password);
-                break;
-            } catch (Exception e){
-                System.out.println(e.getMessage());
-                System.out.println("Connection did not succeed. Please try again.");
-                ++timesTried;
-                continue;
-            }
 
-        }
-        if (timesTried >= 3) {
-            System.out.println("Failed 3 times. Exiting program");
-            System.exit(0);
-        }
-        return timesTried < 3;
-    }
-
+    /**
+     * Initializes the list of commands. This is where to add new commands
+     */
     private void InitializeCommands(){
         this.commands = new HashMap<>();
 //        this.commandDesc = new HashMap<>();

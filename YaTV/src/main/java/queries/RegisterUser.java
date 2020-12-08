@@ -10,7 +10,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
-
+/**
+ * Query that registers a user in the database
+ */
 public class RegisterUser extends YaTVQuery{
 
     private static Map<String, List<Integer>> createParamList(){

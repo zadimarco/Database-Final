@@ -12,7 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Query that subscribes a user to an app
+ */
 public class SubscribeUser extends YaTVQuery{
 
     private static Map<String, List<Integer>> createParamList(){
