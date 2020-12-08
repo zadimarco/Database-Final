@@ -25,7 +25,7 @@ public class RegisterUser extends YaTVQuery{
     }
 
     private static final String sql =
-            "INSERT INTO YAUser\n" +
+            "INSERT INTO yauser\n" +
             "(email, firstName, lastName, country, passw, salt)\n" +
             "VALUES\n" +
             "(?, ?, ?, ?, ?, ?);";
