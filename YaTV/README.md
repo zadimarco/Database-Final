@@ -7,7 +7,9 @@ This program does require that the java jdk is installed to compile and run.
 
 ### Database Setup
 You will need a MySQL database solution installed, or a database that your computer can connect to
-
+To setup the database, run the `setup.sql` file within mysql
+- This will create the database and import some prefilled data
+- If you would just like the schema, just run the `dml.sql` file
 
 
 ### Creating a jar
@@ -31,5 +33,14 @@ Note:
 The input will appear below the gradle `<=========----> 75% EXECUTING [19s]`, which does impact the user experience
 
 
+### Running through docker
+The easiest way to run the program is with docker
 
-## Explanation of Project
+Steps:
+1. You will need docker and docker-compose installed on your machine ([Docker Desktop](https://www.docker.com/products/docker-desktop) for Windows)
+2. Run `docker-compose build` from within this directory
+3. Run `docker-compose run --rm yatv`
+
+This will boot you into an environment with the preloaded database
+
+## Video Tutorials
