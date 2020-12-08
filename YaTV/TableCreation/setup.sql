@@ -1,6 +1,6 @@
 CREATE DATABASE yatv;
 USE yatv;
-SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
 
 CREATE TABLE IF NOT EXISTS yauser
