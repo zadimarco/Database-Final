@@ -68,3 +68,17 @@ public class MostAnticipatedShows extends YaTVQuery {
         return stmt.executeQuery();
     }
 }
+
+
+
+//-- -------------SCORING-------------
+//        -- +1 Joined a lot of tables (largest join is 4 tables being the 2 subqueries and 2 additional tables)
+//        -- +2 2 subqueries
+//        -- +1 Aggregate Function
+//        -- +1 Non-Inner join being used
+//        -- +1 Grouping
+//        --     Needed to Group to get the correct aggregate function results
+//        -- +1 Ordering fields
+//        -- +1 Non-aggregate function If being used
+//        -- ---------------------------------------
+//        -- 9 Points = Complex

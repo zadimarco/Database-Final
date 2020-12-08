@@ -69,3 +69,16 @@ public class RecommendedVideos extends YaTVQuery {
         return stmt.executeQuery();
     }
 }
+
+//-- -------------SCORING-------------
+//        -- +1 Joined 4 tables
+//        -- +1 Two subqueries (Inner subquery is kind of trivial)
+//        -- +1 Aggregate Function
+//        -- +1 Grouping
+//        --     Needed to Group to get the correct aggregate function results
+//        -- +1 Ordering
+//        -- +1 WHERE/HAVING conditions not for joins
+//        -- +1 This query is a recommendation system based on other users, which is incredibly useful for a tv application
+//        -- ---------------------------------------
+//        -- 7 Points = Complex
+

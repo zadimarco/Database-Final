@@ -79,3 +79,17 @@ public class MoneyMakingTags extends YaTVQuery {
         return stmt.executeQuery();
     }
 }
+
+
+//-- -------------SCORING-------------
+//        -- +1 Joined a lot of tables
+//        -- +2 2 subqueries
+//        -- +1 Aggregate Function
+//        -- +1 Grouping
+//        --     Needed to Group to get the correct aggregate function results
+//        -- +1 Ordering fields
+//        -- +1 A WHERE not used for joins
+//        -- +1 Non-aggregate function Concat and format being used
+//        -- +1 This query provides an estimate of the profitability of each tag, which is a great figure to have
+//        -- ---------------------------------------
+//        -- 9 Points = Complex

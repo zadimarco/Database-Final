@@ -83,3 +83,15 @@ public class RecommendedByTag extends YaTVQuery {
         return stmt.executeQuery();
     }
 }
+
+//-- -------------SCORING-------------
+//        -- +1 Joined More than 3 tables (Subqueries each use 3)
+//        -- +1 Non-inner join used
+//        -- +2 Two subquery
+//        -- +1 Aggregate Function
+//        -- +1 Grouping
+//        -- +1 Ordering fields
+//        -- 		Ordering by the show's rating and the name of the show
+//        -- +1 This query allows a user to find the highest rated shows of a specific tag, which seems very useful
+//        -- ---------------------------------------
+//        -- 8 Points = Complex

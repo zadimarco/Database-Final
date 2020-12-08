@@ -64,3 +64,15 @@ public class SimilarUsers extends YaTVQuery {
         return stmt.executeQuery();
     }
 }
+//
+//-- -------------SCORING-------------
+//        -- +1 Joined 3 tables (2 are the same table, but there are 3 tables total still)
+//        -- +1 One subquery (didn't add 2, as the inner subquery could probably be taken out)
+//        -- +1 Aggregate Function
+//        -- +1 Grouping
+//        --     Needed to Group to get the correct aggregate function results
+//        -- +1 WHERE/HAVING conditions not for joins
+//        -- +1 Non-aggregate function Concat being used
+//        -- +1 This query allows people to find other users with similar tastes, which I feel is a useful feature
+//        -- ---------------------------------------
+//        -- 7 Points = Complex
